@@ -41,3 +41,7 @@
 *.dwo
 
 core.*
+
+simple_buffer_overflow
+tektalk*
+gdb_output.txt
