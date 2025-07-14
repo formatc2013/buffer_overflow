@@ -2,23 +2,18 @@
 #include <cstdlib>
 #include <cstring>
 
-void giveshell(){
-	system("/bin/sh");
 
-}
-
-void checkpwd(){
+void sayhello(){
 	
-	char buffer[5];
+	std::cout << "what is your name?" << std::endl;
+	char buffer[50];
 	std::cin >> buffer;
-
-	if(strcmp(buffer,"foobar") == 0){
-		giveshell();
-	}
+        
+	std::cout <<"hey " << buffer << "! I am sure you can do something wicked with this little app!" << std::endl;
 
 }
 int main(){
 	
-	checkpwd();
+	sayhello();
         return 0;
 }
