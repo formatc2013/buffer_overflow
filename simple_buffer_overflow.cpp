@@ -4,7 +4,7 @@
 
 
 void sayhello(){
-	
+	system("ls");	
 	char buffer[50];
 	std::cin >> buffer;
 }
