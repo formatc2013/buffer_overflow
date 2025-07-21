@@ -45,3 +45,6 @@ core.*
 simple_buffer_overflow
 tektalk*
 gdb_output.txt
+
+fuzz/KORPUS/*
+fuzz/crash*

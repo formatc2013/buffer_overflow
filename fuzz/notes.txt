@@ -1,0 +1,1 @@
+clang++ -g -fsanitize=address,fuzzer fuzzme.c -o fuzzme ; ./fuzzme KORPUS
